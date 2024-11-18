@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coastal Health Data Challenge</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: 'a577d86b-897d-437c-9cc0-8ae5ec0318c0', // The ID of this integration.
+        region: 'aws-us-east-1', // The region your integration is hosted in.
+        serviceInstanceID: '20241101-2025-1906-6071-f76aaf1cd549', // The ID of your service instance.
+        onLoad: async (instance) => {
+          await instance.render();
+        },
+      };
+      setTimeout(function () {
+        const t = document.createElement('script');
+        t.src =
+          'https://web-chat.global.assistant.watson.appdomain.cloud/versions/' +
+          (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+          '/WatsonAssistantChatEntry.js';
+        document.head.appendChild(t);
+      });
+    </script>
+  </body>
+</html>
